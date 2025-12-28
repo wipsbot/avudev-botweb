@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KIẾM TIỀN ONLINE MIỄN PHÍ 2026</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+</head>
+<body onload="initApp()">
+    <div class="header">
+        <div onclick="toggleSidebar()"><i class="fas fa-bars"></i></div>
+        <div class="web-name">KIẾM TIỀN ONLINE MIỄN PHÍ 2026</div>
+        <div class="wallet-top" onclick="showPage('wallet')">
+            <span id="top-balance">0đ</span>
+            <div class="avatar"></div>
+        </div>
+    </div>
+
+    <div id="sidebar" class="sidebar">
+        <span class="close-btn" onclick="toggleSidebar()">&times;</span>
+        <div class="sidebar-header">MENU 2026</div>
+        <a href="javascript:void(0)" onclick="showPage('home')"><i class="fas fa-home"></i> TRANG CHỦ</a>
+        <a href="javascript:void(0)" onclick="showPage('task')"><i class="fas fa-link"></i> NHIỆM VỤ KIẾM TIỀN</a>
+        <a href="javascript:void(0)" onclick="showPage('mod')"><i class="fas fa-gamepad"></i> LẤY LINK MOD GAME</a>
+        <a href="javascript:void(0)" onclick="showPage('wallet')"><i class="fas fa-wallet"></i> VÍ & RÚT TIỀN</a>
+        <a href="javascript:void(0)" onclick="showPage('profile')"><i class="fas fa-user-circle"></i> TRANG CÁ NHÂN</a>
+        <a href="javascript:void(0)" onclick="auth.signOut().then(()=>window.location.reload())"><i class="fas fa-sign-out-alt"></i> ĐĂNG XUẤT</a>
+    </div>
+
+    <div class="container" id="main-view">
+        </div>
+
+    <footer class="footer">Copyright © 2025 KIEMTIENONLINEMIENPHI</footer>
+
+    <script src="js/database.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng Nhập - KIẾM TIỀN ONLINE 2026</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+</head>
+<body style="background:#1a202c; display:flex; align-items:center; justify-content:center; height:100vh;">
+    <div class="card" style="width:90%; max-width:380px; text-align:center;">
+        <h2 style="color:var(--blue)">HỆ THỐNG KIẾM TIỀN</h2>
+        <input type="email" id="email" placeholder="Email (gmail,...)">
+        <input type="password" id="pass" placeholder="Mật khẩu">
+        <button class="btn-blue" onclick="handleAuth('login')">ĐĂNG NHẬP</button>
+        <button class="btn-blue" style="background:#4a5568" onclick="handleAuth('reg')">ĐĂNG KÝ MỚI</button>
+    </div>
+    <script src="js/database.js"></script>
+    <script>
+        async function handleAuth(t){
+            const e=document.getElementById('email').value, p=document.getElementById('pass').value;
+            try {
+                let r = (t==='reg')?await auth.createUserWithEmailAndPassword(e,p):await auth.signInWithEmailAndPassword(e,p);
+                if(t==='reg') await db.ref('users/'+r.user.uid).set({email:e, balance:0, tasks_week:0, join_date:new Date().toLocaleDateString()});
+                window.location.href='index.html';
+            } catch(err) { alert("Lỗi: " + err.message); }
+        }
+    </script>
+</body>
+</html>

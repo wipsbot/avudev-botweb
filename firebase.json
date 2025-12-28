@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "site": "avudev-botweb-c6238",
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
